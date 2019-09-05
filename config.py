@@ -27,7 +27,6 @@ glimpse_arg.add_argument('--loc_hidden', type=int, default=128,
 glimpse_arg.add_argument('--glimpse_hidden', type=int, default=128,
                          help='hidden size of glimpse fc')
 
-
 # core network params
 core_arg = add_argument_group('Core Network Params')
 core_arg.add_argument('--num_glimpses', type=int, default=6,
@@ -35,14 +34,12 @@ core_arg.add_argument('--num_glimpses', type=int, default=6,
 core_arg.add_argument('--hidden_size', type=int, default=256,
                       help='hidden size of rnn')
 
-
 # reinforce params
 reinforce_arg = add_argument_group('Reinforce Params')
 reinforce_arg.add_argument('--std', type=float, default=0.17,
                            help='gaussian policy standard deviation')
 reinforce_arg.add_argument('--M', type=float, default=10,
                            help='Monte Carlo sampling for valid and test sets')
-
 
 # data params
 data_arg = add_argument_group('Data Params')
@@ -56,7 +53,6 @@ data_arg.add_argument('--shuffle', type=str2bool, default=True,
                       help='Whether to shuffle the train and valid indices')
 data_arg.add_argument('--show_sample', type=str2bool, default=False,
                       help='Whether to visualize a sample grid of the data')
-
 
 # training params
 train_arg = add_argument_group('Training Params')
@@ -73,10 +69,9 @@ train_arg.add_argument('--lr_patience', type=int, default=10,
 train_arg.add_argument('--train_patience', type=int, default=50,
                        help='Number of epochs to wait before stopping train')
 
-
 # other params
 misc_arg = add_argument_group('Misc.')
-misc_arg.add_argument('--use_gpu', type=str2bool, default=False,
+misc_arg.add_argument('--use_gpu', type=str2bool, default=True,
                       help="Whether to run on the GPU")
 misc_arg.add_argument('--best', type=str2bool, default=True,
                       help='Load best model or most recent for testing')

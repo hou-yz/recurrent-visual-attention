@@ -16,7 +16,7 @@ def main(config):
     kwargs = {}
     if config.use_gpu:
         torch.cuda.manual_seed(config.random_seed)
-        kwargs = {'num_workers': 1, 'pin_memory': True}
+        kwargs = {'num_workers': 0, 'pin_memory': True}
 
     # instantiate data loaders
     if config.is_train:
